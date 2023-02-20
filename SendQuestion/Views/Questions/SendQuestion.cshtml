@@ -1,0 +1,39 @@
+﻿@model SendQuestion.ViewModels.QuestionViewModel
+
+<div class="card-body custom-table border rounded shadow bg-dark bg-opacity-25">
+    <form method="post" asp-action="SendQuestion">
+
+        <h1 class="text-center text-uppercase" style="color:green">Send a question</h1>
+
+        <h5>Please fill out the following information</h5>
+
+        <div class="row justify-content-around">
+            <div class="col-12">
+                <div class="form-group">
+                    <label class="my-2 text-uppercase" asp-for="@Model.Email">Email</label>
+                    <input class="form-control w-80 mb-3" asp-for="@Model.Email" placeholder="Enter a valid email address">
+                    <span asp-validation-for="@Model.Email" style="color:red" class="field-validation-error"></span>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label class="my-2 text-uppercase" asp-for="@Model.Text">Question</label>
+                    <textarea class="form-control w-80 mb-3" rows="5" asp-for="@Model.Text" placeholder="What is your question?"></textarea>
+                    <span asp-validation-for="@Model.Text" style="color:red" class="field-validation-error"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-success text-uppercase">Ask Question</button>
+
+    </form>
+</div>
+
+@*Client side validation*@
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

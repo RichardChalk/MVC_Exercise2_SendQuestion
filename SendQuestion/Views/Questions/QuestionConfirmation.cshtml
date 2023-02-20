@@ -1,0 +1,24 @@
+﻿@model SendQuestion.ViewModels.QuestionViewModel
+
+<div class="card-body custom-table border rounded shadow bg-dark bg-opacity-25">
+    <form>
+
+        <h1 class="text-center text-uppercase" style="color:green">Thanks for your question</h1>
+
+        <h5>@Model.Email</h5>
+        <p>@Model.Text</p>
+
+
+
+
+        <button asp-controller="Questions" asp-action="SendQuestion" type="submit" class="btn btn-secondary text-uppercase">Back To Question Formular</button>
+
+    </form>
+</div>
+
+@*Client side validation*@
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
